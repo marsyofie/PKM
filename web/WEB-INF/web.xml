@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    <servlet>
+        <servlet-name>upload1</servlet-name>
+        <servlet-class>serv.upload1</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>upload2</servlet-name>
+        <servlet-class>serv.upload2</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>upload3</servlet-name>
+        <servlet-class>serv.upload3</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CheckAvailability</servlet-name>
+        <servlet-class>serv.CheckAvailability</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>upload1</servlet-name>
+        <url-pattern>/upload1</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>upload2</servlet-name>
+        <url-pattern>/upload2</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>upload3</servlet-name>
+        <url-pattern>/upload3</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CheckAvailability</servlet-name>
+        <url-pattern>/CheckAvailability</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <!-- SSL settings. only allow HTTPS access to JIRA -->
+<security-constraint>
+<web-resource-collection>
+<web-resource-name>Entire Application</web-resource-name>
+<url-pattern>/*</url-pattern>
+</web-resource-collection>
+<user-data-constraint>
+<transport-guarantee>CONFIDENTIAL</transport-guarantee>
+</user-data-constraint>
+</security-constraint>
+</web-app>
